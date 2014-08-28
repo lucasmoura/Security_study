@@ -46,7 +46,7 @@ public class SQL_Injection
 	    return DATABASE_CONNECTION_SUCCEEDED;
 	}
 	
-	public boolean doQuery(int id)
+	public boolean doQuery(String id)
 	{
 		
 		try
@@ -54,6 +54,8 @@ public class SQL_Injection
 		
 			Statement statement = conn.createStatement();
 			
+			
+			System.out.println(id);
 			ResultSet resultSet = statement.executeQuery(
 			" SELECT * FROM users WHERE id = " + id);
 			
